@@ -1,0 +1,117 @@
+
+{% extends "contenedor.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Control Home</h3>
+                </div>
+                <div class="tabbable">
+
+                    <ul class="nav nav-tabs form-switcher">
+                        <li class="active">
+                            <a name="html-tab" href="#dispositivos" data-toggle="tab" aria-expanded="true">TU HOGAR</a>
+                        </li>
+                        <li>
+                            <a name="raw-tab" href="#registros" data-toggle="tab">REGISTROS</a>
+                        </li>
+                    </ul>
+
+                    <div class="well tab-content">
+
+                        <div class="tab-pane active" id="dispositivos">
+
+                            <form action="/rest/dispositivos/" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate="">
+                                <fieldset>
+
+                                    <div class="form-actions">
+                                        <button class="btn btn-primary" title="Make a POST request on the Dispositivo List resource">POST</button>
+                                    </div>
+
+
+                                    <table class="table">
+          <tbody>
+            <tr >
+              <th>
+                        <div class="col-md-10">
+                        ID
+                        </div>
+                    </th>
+              <th>
+                        <div class="col-md-10">
+                        Nombre
+                    </div>
+                    </th>
+              <th>
+                        <div class="col-md-10">
+                        MAC
+                    </div>
+                    </th>
+
+                    <th>
+                        <div class="col-md-10">
+                        Estado                         
+                    </div>
+                    </th>
+
+              </tr>
+
+               {% for item in pro %}
+                    <tbody class="table table-hover">
+                    <tr id="tr{{ item.id }}">
+
+
+                        <td  height="40" >{{ item.prov_cedula}}</td>
+                        <td  height="40" >{{ item.cat_id }}</td>
+                        <td  height="40" >{{ item.pro_id }}</td>
+                        <td  height="40" >{{ item.pro_nombre }}</td>
+                        <td  height="40" >{{ item.pro_modelo }}</td>
+                        <td  height="40" >{{ item.pro_marca }}</td>
+                        <td  height="40" >{{ item.pro_stocka }}</td>
+                        <td  height="40" >{{ item.pro_stockm }}</td>
+                        <td  height="40" >{{ item.pro_precio }}</td>
+                        <td  height="40" >{{ item.pro_preciov }}</td>
+                        <td  height="40" >{{ item.pro_estado }}</td>
+                        <td  height="30">
+
+                            <button style="height: 30px; width: 37px" aria-label="Left Align" class="btn btn-default" type="button" onclick="window.location.href='{% url 'modificarproducto' item.pro_id %}'" >
+                             <span class="glyphicon glyphicon-file" aria-hidden="true" > </span>
+                            </button>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                {% endfor %}
+
+
+                <tr>
+                
+                
+                
+
+          </tbody>
+        </table>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="registros">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </section><!-- /.content -->
+
+
+
+
+
+
+{% endblock content %}

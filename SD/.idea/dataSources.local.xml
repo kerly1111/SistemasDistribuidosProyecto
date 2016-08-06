@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Django default" uuid="50100039-d9f8-42c5-9404-98b3c1ab629b">
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <schema-pattern>proyectosd.pg_catalog proyectosd.public</schema-pattern>
+      <default-schemas>proyectosd.public</default-schemas>
+    </data-source>
+    <data-source name="Django default2" uuid="8d7b8666-4226-4a1e-80b6-72b99d0fb731">
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+    </data-source>
+  </component>
+</project>
