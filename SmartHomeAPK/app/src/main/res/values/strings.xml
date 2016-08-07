@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">SmartHomeAPK</string>
+    <string name="app_name">SmartHome</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+
+    <!--Servidor-->
+    <string name="direccionServidor">http://192.168.1.5:8000</string>
+
+
+
+
 </resources>
